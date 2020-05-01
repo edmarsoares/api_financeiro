@@ -7,14 +7,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 @Entity
 @Table(name = "BANDEIRAS")
+@Data
+@EqualsAndHashCode
 public class Bandeiras {
 	
 	@Id
 	@Column(name = "ID_BANDEIRA")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer idBandeira;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	
 	@Column(name = "NOME")
 	private String nome;

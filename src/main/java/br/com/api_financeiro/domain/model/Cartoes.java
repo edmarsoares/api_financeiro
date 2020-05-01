@@ -17,7 +17,7 @@ public class Cartoes {
 	
 	@Id
 	@Column(name = "ID_CARTAO")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idCartao;
 	
 	@JoinColumn(name = "ID_CONTA")
@@ -34,6 +34,7 @@ public class Cartoes {
 	private String cvvCripto;
 	
 	@JoinColumn(name = "STATUS")
+	@OneToOne
 	private StatusCartao status;
 	
 	@Column(name = "DATA_STATUS", length = 20)
